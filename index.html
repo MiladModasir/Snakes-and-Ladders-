@@ -1,57 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Snakes and Ladders</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  </head>
-  <body>
-    <button id="musicToggle">🎵 Play Music</button>
-    <audio id="bgMusic" loop>
-      <source
-        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
-        type="audio/mp3"
-      />
-    </audio>
-    <div class="player-inputs">
-      <input type="text" id="player1Name" placeholder="Player 1 Name" />
-      <input type="text" id="player2Name" placeholder="Player 2 Name" />
-      <button id="startGameBtn">Start Game</button>
-    </div>
-    <div class="game-container">
-      <div class="info">
-        <h1>Snakes & Ladders 🐍🪜</h1>
-        <div class="mode-select">
-          <label
-            ><input type="radio" name="mode" value="2" checked /> 2
-            Players</label
-          >
-          <label
-            ><input type="radio" name="mode" value="1" /> 1 Player (vs
-            COM)</label
-          >
-        </div>
-        <p id="turn">Player 1's Turn 🎲</p>
-        <button id="rollBtn">Roll Dice</button>
-        <div class="dice-container">
-          <img
-            id="diceImg"
-            src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Dice-1-b.svg"
-            alt="Dice"
-            width="60"
-          />
-          <p id="diceResult"></p>
-        </div>
-          <p
-          id="actionMessage"
-          style="font-weight: bold; color: green; text-align: center"
-        ></p>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snakes and Ladders</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+  <button id="musicToggle">🎵 Play Music</button>
+  <audio id="bgMusic" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3" />
+  </audio>
+  <div class="player-inputs">
+    <input type="text" id="player1Name" placeholder="Player 1 Name" />
+    <input type="text" id="player2Name" placeholder="Player 2 Name" />
+    <button id="startGameBtn">Start Game</button>
+  </div>
+  <div class="game-container">
+    <div class="info">
+      <h1>Snakes & Ladders 🐍🪜</h1>
+      <div class="mode-select">
+        <label><input type="radio" name="mode" value="2" checked /> 2
+          Players</label>
+        <label><input type="radio" name="mode" value="1" /> 1 Player (vs
+          COM)</label>
       </div>
-      <div class="game-board" id="gameBoard"></div>
+      <p id="turn">Player 1's Turn 🎲</p>
+      <button id="rollBtn">Roll Dice</button>
+      <div class="dice-container">
+        <img id="diceImg" src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Dice-1-b.svg" alt="Dice"
+          width="60" />
+        <p id="diceResult"></p>
+      </div>
+      <p id="actionMessage" style="font-weight: bold; color: green; text-align: center"></p>
     </div>
+    <div class="game-board-wrapper">
+      <div class="game-board" id="gameBoard"></div>
+
+    </div>
+
     <canvas id="confettiCanvas"></canvas>
     <script src="index.js"></script>
-  </body>
-  </html>
+</body>
+
+</html>

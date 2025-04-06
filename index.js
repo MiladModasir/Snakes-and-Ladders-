@@ -57,7 +57,7 @@ function createBoard() {
 
     if (snakes[i]) {
       square.classList.add("snake-square");
-      square.textContent += " 🐍";
+      square.textContent += " 🐍 ";
     }
     if (ladders[i]) {
       square.classList.add("ladder-square");
@@ -73,7 +73,7 @@ function placePlayers() {
     const square = document.getElementById(`square-${player.position}`);
     const token = document.createElement("div");
     token.classList.add("player", player.class);
-    token.textContent = index === 0 ? "🐶" : "🐱";
+    token.textContent = index === 0 ? "🐭" : "🐱";
     square.appendChild(token);
     player.element = token;
   });
@@ -144,9 +144,7 @@ function movePlayer(steps) {
 rollBtn.addEventListener("click", () => {
   const roll = Math.floor(Math.random() * 6) + 1;
   const diceImg = document.getElementById("diceImg");
-  // 🎲 Trigger animation
   diceImg.classList.add("animate-roll");
-  // 🎯 After animation, show new dice face and move
   setTimeout(() => {
     diceImg.src = `https://upload.wikimedia.org/wikipedia/commons/${diceRollImagePath(
       roll
@@ -154,7 +152,6 @@ rollBtn.addEventListener("click", () => {
     diceImg.classList.remove("animate-roll");
     diceResult.textContent = `You rolled a ${roll}`;
     movePlayer(roll);
-    // 👾 Computer turn if 1-player mode
     if (gameMode === 1 && currentPlayer === 1) {
       rollBtn.disabled = true;
       setTimeout(() => {
@@ -256,7 +253,7 @@ function updatePlayerPosition(playerIndex) {
   const square = document.getElementById(`square-${player.position}`);
   const token = document.createElement("div");
   token.classList.add("player", player.class);
-  token.textContent = playerIndex === 0 ? "🔴" : "🔵";
+  token.textContent = playerIndex === 0 ? "🐭" : "🐱";
 
   const message = document.getElementById("actionMessage").textContent;
   if (message.includes("climbed a ladder")) {
